@@ -1,0 +1,23 @@
+{
+  "name": "dfi-ssr",
+  "version": "1.0.0",
+  "description": "Gemaakt met Vue en Nuxt",
+  "author": "Mark van Lit",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0",
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "bootstrap": "^4.1.3"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.16.4"
+  }
+}

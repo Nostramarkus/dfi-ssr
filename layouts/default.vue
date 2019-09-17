@@ -1,53 +1,54 @@
 <template>
   <div>
+    <Menu/>
     <nuxt/>
   </div>
 </template>
 
+<script>
+import Menu from '~/components/Menu.vue'
+
+export default {
+  components: {
+    Menu
+  }
+}
+</script>
+
+
 <style>
 @font-face {
   font-family: 'BebasNeueCyrillic';
-  src: url('https://designforinterior.com/assets/fonts/BebasNeueCyrillic.eot?#iefix')
-      format('embedded-opentype'),
-    url('https://designforinterior.com/assets/fonts/BebasNeueCyrillic.otf')
+  src: url('../assets/fonts/BebasNeueCyrillic.eot?#iefix')
+      format('embedded-opentype') url('../assets/fonts/BebasNeueCyrillic.otf')
       format('opentype'),
-    url('https://designforinterior.com/assets/fonts/BebasNeueCyrillic.woff')
-      format('woff'),
-    url('https://designforinterior.com/assets/fonts/BebasNeueCyrillic.ttf')
-      format('truetype'),
-    url('https://designforinterior.com/assets/fonts/BebasNeueCyrillic.svg#BebasNeueCyrillic')
-      format('svg');
+    url('../assets/fonts/BebasNeueCyrillic.woff') format('woff'),
+    url('../assets/fonts/BebasNeueCyrillic.ttf') format('truetype'),
+    url('../assets/fonts/BebasNeueCyrillic.svg#BebasNeueCyrillic') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Palanquin-Regular';
-  src: url('https://designforinterior.com/assets/fonts/Palanquin-Regular.eot?#iefix')
+  src: url('../assets/fonts/Palanquin-Regular.eot?#iefix')
       format('embedded-opentype'),
-    url('https://designforinterior.com/assets/fonts/Palanquin-Regular.otf')
-      format('opentype'),
-    url('https://designforinterior.com/assets/fonts/Palanquin-Regular.woff')
-      format('woff'),
-    url('https://designforinterior.com/assets/fonts/Palanquin-Regular.ttf')
-      format('truetype'),
-    url('https://designforinterior.com/assets/fonts/Palanquin-Regular.svg#Palanquin-Regular')
-      format('svg');
+    url('../assets/fonts/Palanquin-Regular.otf') format('opentype'),
+    url('../assets/fonts/Palanquin-Regular.woff') format('woff'),
+    url('../assets/fonts/Palanquin-Regular.ttf') format('truetype'),
+    url('../assets/fonts/Palanquin-Regular.svg#Palanquin-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Palanquin-Regular'; /* bold */
-  src: url('https://designforinterior.com/assets/fonts/PalanquinDark-Bold.eot?#iefix')
+  src: url('../assets/fonts/PalanquinDark-Bold.eot?#iefix')
       format('embedded-opentype'),
-    url('https://designforinterior.com/assets/fonts/PalanquinDark-Bold.otf')
-      format('opentype'),
-    url('https://designforinterior.com/assets/fonts/PalanquinDark-Bold.woff')
-      format('woff'),
-    url('https://designforinterior.com/assets/fonts/PalanquinDark-Bold.ttf')
-      format('truetype'),
-    url('https://designforinterior.com/assets/fonts/PalanquinDark-Bold.svg#PalanquinDark-Bold')
+    url('../assets/fonts/PalanquinDark-Bold.otf') format('opentype'),
+    url('../assets/fonts/PalanquinDark-Bold.woff') format('woff'),
+    url('../assets/fonts/PalanquinDark-Bold.ttf') format('truetype'),
+    url('../assets/fonts/PalanquinDark-Bold.svg#PalanquinDark-Bold')
       format('svg');
   font-weight: bold;
   font-style: normal;

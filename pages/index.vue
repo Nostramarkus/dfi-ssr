@@ -1,72 +1,83 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        dfi-ssr
-      </h1>
-      <h2 class="subtitle">
-        Gemaakt met Vue en Nuxt
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div class="row">
+    <div class="col-xl-4">
+      <br>
+      <h2>Filters</h2>
+      <br>
+      <ZoekFilters/>
+    </div>
+    <div class="col-xl-8">
+      <br>
+      <h2>Resultaten</h2>
+      <br>
+      <Loader v-if="this.loading"/>
+      <div v-else class="flex-wapper">
+        <ItemTegel v-for="item in items" :key="item.id"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Loader from '~/components/Loader.vue'
+import ZoekFilters from '~/components/ZoekFilters.vue'
+import ItemTegel from '~/components/ItemTegel.vue'
+import { mapState } from 'vuex'
 
 export default {
+  head() {
+    return {
+      title: 'Homepage - Design For Interior',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Dit is de DFI homepage gemaakt met Vue.js en Nuxt.js, deze website is gemaakt met SSR techniek (Server Side Rendered)'
+        }
+      ]
+    }
+  },
+  data() {
+    return {
+      loading: false
+    }
+  },
   components: {
-    Logo
-  }
+    Loader,
+    ZoekFilters,
+    ItemTegel
+  },
+  async fetch({ store, error }) {
+    try {
+      await store.dispatch('items/fetchItems')
+    } catch (e) {
+      error({
+        statusCode: 503,
+        message: 'Kan server niet bereiken'
+      })
+    }
+  },
+  computed: mapState({
+    items: state => state.items.items
+  })
 }
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+.flex-wapper {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  justify-content: center;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+  min-height: 200px;
 }
 </style>

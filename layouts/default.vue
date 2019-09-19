@@ -1,7 +1,9 @@
 <template>
   <div>
     <Menu/>
-    <nuxt/>
+    <main class="container bg-white main">
+      <nuxt/>
+    </main>
   </div>
 </template>
 
@@ -140,46 +142,5 @@ input[type='number']::-webkit-outer-spin-button {
 
 .dfi-bg {
   background-color: #252525;
-}
-
-.logo-menu {
-  width: 75px;
-}
-.navbar {
-  padding: 0.3rem 1rem;
-}
-
-.navbar-dark .navbar-nav .nav-link {
-  color: rgb(255, 255, 255);
-}
-.nav-link {
-  padding-top: 10px;
-}
-
-.dfi-hamburger-btn {
-  padding: 0;
-  border-color: transparent !important;
-  margin-top: 1px;
-}
-
-.dfi-hamburger {
-  font-size: 32px;
-}
-
-.dropdown-menu {
-  background-color: #252525;
-  border-radius: 0;
-  color: #ffffff;
-  border: none;
-}
-
-.dropdown-item {
-  color: #ffffff;
-}
-
-.dropdown-item:focus,
-.dropdown-item:hover {
-  color: rgba(255, 255, 255, 0.75);
-  background-color: transparent;
 }
 </style>

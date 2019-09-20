@@ -12,7 +12,7 @@
       <br>
       <Loader v-if="this.loading"/>
       <div v-else class="flex-wapper">
-        <ItemTegel v-for="item in items" :key="item.id"/>
+        <ItemTegel v-for="item in items" :key="item.id" :item="item"/>
       </div>
     </div>
   </div>
@@ -50,7 +50,8 @@ export default {
   },
   async fetch({ store, error }) {
     try {
-      await store.dispatch('items/fetchItems')
+      await store.dispatch('main/fetchItems')
+      await store.dispatch('main/fetchCats')
     } catch (e) {
       error({
         statusCode: 503,
@@ -59,7 +60,7 @@ export default {
     }
   },
   computed: mapState({
-    items: state => state.items.items
+    items: state => state.main.items
   })
 }
 </script>

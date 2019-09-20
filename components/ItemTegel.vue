@@ -1,20 +1,35 @@
 <template>
   <div class="flex-item">
-    <nuxt-link to="/JE-MOEDER-55">
+    <nuxt-link :to="'/' + this.itemLink(item.id,item.titel)">
       <div class="item-img-wrapper">
-        <img src="https://via.placeholder.com/300x200" class="item-img" alt="Titel">
+        <img :src="item.img" class="item-img" alt="Titel">
       </div>
       <div class="item-details-wrapper">
-        <div class="item-titel">Titel</div>
+        <div class="item-titel">{{item.titel}}</div>
         <div class="item-prijs">€100,-</div>
         <div class="item-muted">
           19-09-2019
-          <br>Bredizza
+          <br>
+          {{item.plaats}}
         </div>
       </div>
     </nuxt-link>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    item: { type: Object }
+  },
+  methods: {
+    itemLink(id, titel) {
+      return titel.split(' ').join('-') + '-' + id
+    }
+  }
+}
+</script>
+
 
 <style>
 .flex-item {

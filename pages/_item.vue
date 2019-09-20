@@ -28,7 +28,7 @@ export default {
     const lastIndex = itemUrl.lastIndexOf('-')
     const itemId = itemUrl.substring(lastIndex + 1)
     try {
-      await store.dispatch('items/fetchItem', itemId)
+      await store.dispatch('main/fetchItem', itemId)
     } catch (e) {
       error({
         statusCode: 503,
@@ -37,7 +37,7 @@ export default {
     }
   },
   computed: mapState({
-    item: state => state.items.item
+    item: state => state.main.item
   })
 }
 </script>

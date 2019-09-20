@@ -3,16 +3,46 @@
     <span class="dfi-filter-titel">
       <strong>Categorieën</strong>
       <br>
+      {{catsChecked}}
     </span>
     <div class="dfi-filter-inner">
-      <div class="dfi-checkbox">
-        <input id="01" type="checkbox">
-        <label for="01">Je zusje!</label>
+      <div v-for="cat in cats" :key="cat.id" class="dfi-checkbox">
+        <input
+          :id="cat.id"
+          type="checkbox"
+          @click="onCatClick(cat.id)"
+          :checked="checkThis(cat.id)"
+        >
+        <label :for="cat.id">{{cat.name}}</label>
         <span></span>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import { mapState } from 'vuex'
+
+export default {
+  computed: mapState({
+    cats: state => state.main.cats,
+    catsChecked: state => state.main.catsChecked
+  }),
+  methods: {
+    onCatClick(catId) {
+      this.$store.dispatch('main/updateSetCats', {
+        catId: catId,
+        newArray: false
+      })
+    },
+    checkThis(catId) {
+      const catsChecked = this.$store.state.main.catsChecked
+      return catsChecked.includes(catId) ? true : false
+    }
+  }
+}
+</script>
+
 
 <style>
 .dfi-checkbox {

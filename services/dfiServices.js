@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const apiClient = axios.create({
+const dfiApi = axios.create({
   baseURL: `https://designforinterior.com/api`,
   withCredentials: false,
   headers: {
@@ -11,9 +11,12 @@ const apiClient = axios.create({
 
 export default {
   getItems() {
-    return apiClient.get('/getItems')
+    return dfiApi.get('/getItems')
   },
   getItem(id) {
-    return apiClient.get('/getItemDetails?item=' + id)
+    return dfiApi.get('/getItemDetails?item=' + id)
+  },
+  getCats() {
+    return dfiApi.get('/getCats')
   }
 }

@@ -15,17 +15,18 @@
         <b-collapse id="navbarDesignForInterior" is-nav>
           <b-navbar-nav class="ml-auto">
             <b-nav-item-dropdown text="Koop design items" right>
-              <b-dropdown-item href="#">EN</b-dropdown-item>
-              <b-dropdown-item href="#">ES</b-dropdown-item>
-              <b-dropdown-item href="#">RU</b-dropdown-item>
-              <b-dropdown-item href="#">FA</b-dropdown-item>
+              <b-dropdown-item
+                v-for="cat in cats"
+                :key="cat.id"
+                @click="onCatClick(cat.id)"
+              >{{cat.name}}</b-dropdown-item>
             </b-nav-item-dropdown>
             <div
               class="d-none d-lg-block"
             >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
             <b-nav-item-dropdown text="Verkoop design items" right>
-              <b-dropdown-item to="/item">Inloggen</b-dropdown-item>
-              <b-dropdown-item href="#">Account aanmaken</b-dropdown-item>
+              <b-dropdown-item>Inloggen</b-dropdown-item>
+              <b-dropdown-item>Account aanmaken</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>
@@ -35,7 +36,21 @@
 </template>
 
 <script>
-export default {}
+import { mapState } from 'vuex'
+
+export default {
+  computed: mapState({
+    cats: state => state.main.cats
+  }),
+  methods: {
+    onCatClick(catId) {
+      this.$store.dispatch('main/updateSetCats', {
+        catId: catId,
+        newArray: true
+      })
+    }
+  }
+}
 </script>
 
 <style>

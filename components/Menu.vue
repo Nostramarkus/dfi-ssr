@@ -42,6 +42,18 @@ export default {
   computed: mapState({
     cats: state => state.main.cats
   }),
+  asyncData: {
+    async fetch({ store, error }) {
+      try {
+        await store.dispatch('main/fetchCats')
+      } catch (e) {
+        error({
+          statusCode: 503,
+          message: 'Kan server niet bereiken'
+        })
+      }
+    }
+  },
   methods: {
     onCatClick(catId) {
       this.$store.dispatch('main/updateSetCats', {

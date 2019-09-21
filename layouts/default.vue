@@ -13,6 +13,9 @@ import Menu from '~/components/Menu.vue'
 export default {
   components: {
     Menu
+  },
+  beforeCreate: function() {
+    this.$store.dispatch('main/fetchCats')
   }
 }
 </script>

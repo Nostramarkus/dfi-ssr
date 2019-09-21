@@ -1,10 +1,12 @@
 import dfiServices from '~/services/dfiServices.js'
 
 export const state = () => ({
+  itemsFetch: [],
   items: [],
   item: {},
   cats: [],
-  catsChecked: []
+  catsChecked: [],
+  itemDetailsFetch: []
 })
 
 export const mutations = {

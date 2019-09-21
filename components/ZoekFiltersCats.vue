@@ -10,7 +10,7 @@
         <input
           :id="cat.id"
           type="checkbox"
-          @click="onCatClick(cat.id)"
+          @change="onCatClick(cat.id)"
           :checked="checkThis(cat.id)"
         >
         <label :for="cat.id">{{cat.name}}</label>

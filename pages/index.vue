@@ -51,7 +51,6 @@ export default {
   async fetch({ store, error }) {
     try {
       await store.dispatch('main/fetchItems')
-      await store.dispatch('main/fetchCats')
     } catch (e) {
       error({
         statusCode: 503,

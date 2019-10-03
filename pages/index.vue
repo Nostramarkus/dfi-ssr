@@ -3,6 +3,7 @@
     <div class="col-xl-4">
       <br>
       <h2>Filters</h2>
+
       <br>
       <ZoekFilters/>
     </div>

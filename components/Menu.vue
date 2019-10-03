@@ -40,12 +40,12 @@ import { mapState } from 'vuex'
 
 export default {
   computed: mapState({
-    cats: state => state.main.cats
+    cats: state => state.dfiStore.cats
   }),
   asyncData: {
     async fetch({ store, error }) {
       try {
-        await store.dispatch('main/fetchCats')
+        await store.dispatch('dfiStore/fetchCats')
       } catch (e) {
         error({
           statusCode: 503,
@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     onCatClick(catId) {
-      this.$store.dispatch('main/updateSetCats', {
+      this.$store.dispatch('dfiStore/updateSetCats', {
         catId: catId,
         newArray: true
       })

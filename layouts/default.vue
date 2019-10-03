@@ -15,7 +15,7 @@ export default {
     Menu
   },
   beforeCreate: function() {
-    this.$store.dispatch('main/fetchCats')
+    this.$store.dispatch('dfiStore/fetchCats')
   }
 }
 </script>

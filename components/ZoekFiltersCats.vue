@@ -25,18 +25,18 @@ import { mapState } from 'vuex'
 
 export default {
   computed: mapState({
-    cats: state => state.main.cats,
-    catsChecked: state => state.main.catsChecked
+    cats: state => state.dfiStore.cats,
+    catsChecked: state => state.dfiStore.catsChecked
   }),
   methods: {
     onCatClick(catId) {
-      this.$store.dispatch('main/updateSetCats', {
+      this.$store.dispatch('dfiStore/updateSetCats', {
         catId: catId,
         newArray: false
       })
     },
     checkThis(catId) {
-      const catsChecked = this.$store.state.main.catsChecked
+      const catsChecked = this.$store.state.dfiStore.catsChecked
       return catsChecked.includes(catId) ? true : false
     }
   }

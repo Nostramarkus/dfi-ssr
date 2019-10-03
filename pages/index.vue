@@ -8,11 +8,13 @@
     </div>
     <div class="col-xl-8">
       <br>
-      <h2>Resultaten</h2>
+      <h2>Resultaten{{this.loading}}</h2>
       <br>
       <Loader v-if="this.loading"/>
       <div v-else class="flex-wapper">
         <ItemTegel v-for="item in items" :key="item.id" :item="item"/>
+        <span v-if="this.items.length === 0">Geen items gevonden...</span>
+        <div v-else-if="this.items.length % 3 !== 0" style="width:30%"></div>
       </div>
     </div>
   </div>
@@ -49,17 +51,19 @@ export default {
     ItemTegel
   },
   async fetch({ store, error }) {
-    try {
-      await store.dispatch('main/fetchItems')
-    } catch (e) {
-      error({
-        statusCode: 503,
-        message: 'Kan server niet bereiken'
-      })
+    if (store.state.dfiStore.itemsFetch.length === 0) {
+      try {
+        await store.dispatch('dfiStore/fetchItems')
+      } catch (e) {
+        error({
+          statusCode: 503,
+          message: 'Kan server niet bereiken'
+        })
+      }
     }
   },
   computed: mapState({
-    items: state => state.main.items
+    items: state => state.dfiStore.items
   })
 }
 </script>

@@ -10,6 +10,7 @@ export const state = () => ({
   searchInput: ''
 })
 
+//Note to self: mutations moet eigenlijk minder logica in en set alleen de state. De logica kan eigenlijk beter in actions zitten
 export const mutations = {
   SET_ITEMS(state, items) {
     state.items = items
@@ -39,22 +40,26 @@ export const mutations = {
     var itemsNew = state.itemsFetch.filter(i =>
       state.catsChecked.includes(i.catId)
     )
-
     if (state.catsChecked.length === 0) {
       itemsNew = state.itemsFetch
     }
-    /* uit dfi-react 
-    const searchInput = this.state.searchInput;
-    if (searchInput) {
-      itemsNew = itemsNew.filter(i =>
-        i.titel.toLowerCase().includes(searchInput)
-      );
-    }
-    */
+    var searchInput = state.searchInput;
+    itemsNew = itemsNew.filter(i =>
+      i.titel.toLowerCase().includes(searchInput)
+    );
     state.items = itemsNew
   },
   SET_SEARCHINPUT(state, value) {
     state.searchInput = value
+    var itemsNew = state.itemsFetch.filter(i =>
+      i.titel.toLowerCase().includes(value)
+    );
+    if (state.catsChecked.length !== 0) {
+      itemsNew = itemsNew.filter(i =>
+        state.catsChecked.includes(i.catId)
+      )
+    }
+    state.items = itemsNew
   }
 }
 

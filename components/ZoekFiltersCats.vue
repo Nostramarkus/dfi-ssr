@@ -3,7 +3,6 @@
     <span class="dfi-filter-titel">
       <strong>Categorieën</strong>
       <br>
-      {{catsChecked}}
     </span>
     <div class="dfi-filter-inner">
       <div v-for="cat in cats" :key="cat.id" class="dfi-checkbox">

@@ -4,6 +4,9 @@
     <main class="container bg-white main">
       <nuxt/>
     </main>
+    <br>
+    <br>
+    <br>
   </div>
 </template>
 

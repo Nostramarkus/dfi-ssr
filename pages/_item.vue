@@ -5,10 +5,9 @@
         <font-awesome-icon icon="chevron-left"/>&nbsp;TERUG
       </nuxt-link>
     </div>
-
     <div class="row">
       <div class="col-lg-6 order-lg-2">
-        <div class="dfi-bekijk-product-prijs">€&nbsp;{{item.prijs}}</div>
+        <div class="dfi-bekijk-product-prijs">€&nbsp;{{formatPrijs(item.prijs)}}</div>
         <div class="dfi-foto-wrapper">
           <img :src="item.img" :alt="item.titel" class="img-fluid dfi-gallery">
         </div>
@@ -23,7 +22,7 @@
               <td>
                 <strong>Geplaatst</strong>
               </td>
-              <td>{{item.geplaatstDt}}</td>
+              <td>{{formatDatum(item.geplaatstDt)}}</td>
             </tr>
             <tr>
               <td>
@@ -41,7 +40,7 @@
               <td>
                 <strong>Lid sinds</strong>
               </td>
-              <td>{{item.verkoperSinds}}</td>
+              <td>{{formatDatum(item.verkoperSinds)}}</td>
             </tr>
             <tr>
               <td>
@@ -104,6 +103,7 @@
 
 <script>
 import { mapState } from 'vuex'
+import moment from 'moment'
 
 export default {
   head() {
@@ -135,7 +135,20 @@ export default {
   },
   computed: mapState({
     item: state => state.dfiStore.item
-  })
+  }),
+  methods: {
+    formatPrijs(prijs) {
+      const fprijs = prijs
+        .toFixed(2)
+        .toString()
+        .replace('.', ',')
+        .replace(',00', ',-')
+      return fprijs
+    },
+    formatDatum(datum) {
+      return moment(String(datum)).format('DD-MM-YYYY')
+    }
+  }
 }
 </script>
 

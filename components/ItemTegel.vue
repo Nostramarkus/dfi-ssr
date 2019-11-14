@@ -6,9 +6,9 @@
       </div>
       <div class="item-details-wrapper">
         <div class="item-titel">{{item.titel}}</div>
-        <div class="item-prijs">€100,-</div>
+        <div class="item-prijs">€{{formatPrijs(item.prijs)}}</div>
         <div class="item-muted">
-          19-09-2019
+          {{item.datum}}
           <br>
           {{item.plaats}}
         </div>
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import moment from 'moment'
+
 export default {
   props: {
     item: { type: Object }
@@ -25,6 +27,17 @@ export default {
   methods: {
     itemLink(id, titel) {
       return titel.split(' ').join('-') + '-' + id
+    },
+    formatPrijs(prijs) {
+      const fprijs = prijs
+        .toFixed(2)
+        .toString()
+        .replace('.', ',')
+        .replace(',00', ',-')
+      return fprijs
+    },
+    formatDatum(datum) {
+      return moment(String(datum)).format('DD-MM-YYYY')
     }
   }
 }

@@ -10,7 +10,7 @@ export const state = () => ({
   searchInput: ''
 })
 
-//Note to self: mutations moet eigenlijk minder logica in en set alleen de state. De logica kan eigenlijk beter in actions zitten
+//Note to self: mutations moet eigenlijk minder logica in (alleen de state setten). De logica kan eigenlijk beter in actions zitten
 export const mutations = {
   SET_ITEMS(state, items) {
     state.items = items

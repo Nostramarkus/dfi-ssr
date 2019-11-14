@@ -3,13 +3,12 @@
     <div class="col-xl-4">
       <br>
       <h2>Filters</h2>
-
       <br>
       <ZoekFilters/>
     </div>
     <div class="col-xl-8">
       <br>
-      <h2>Resultaten{{this.loading}}</h2>
+      <h2>Resultaten</h2>
       <br>
       <Loader v-if="this.loading"/>
       <div v-else class="flex-wapper">

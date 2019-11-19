@@ -1,12 +1,9 @@
 <template>
   <div>
     <Menu/>
-    <main class="container bg-white main">
+    <main class="container bg-white main mb-5">
       <nuxt/>
     </main>
-    <br>
-    <br>
-    <br>
   </div>
 </template>
 

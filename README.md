@@ -6,6 +6,7 @@ In 2019 heb ik logo, huisstijl en website ontwikkeld voor Design For Interior. V
 <br>
 <strong>Deze repository</strong><br>
 Om aan te tonen dat ik meer in huis heb dan het bouwen van een website op een traditionele manier heb ik ervoor gekozen een kleinere versie van dezelfde website ook te bouwen met React en met Vue. In deze github respository is de Vue variant te vinden. Om nog een stap extra te maken heb ik de website gebouwd met een framework voor Vue genaamd Nuxt (zie https://nuxtjs.org). Nuxt biedt goede oplossingen voor SEO doeleinden en levert extra snelle performance dankzij SSR (Server Side Rendered) techniek.<br>
+<br>
 
 > <strong>Bekijk de website gemaakt met Vue en Nuxt op</strong><br> http://www.vanlitmedia.nl/dfi-ssr
 

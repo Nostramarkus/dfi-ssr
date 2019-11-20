@@ -1,14 +1,14 @@
 # Design For Interior - Server Side Rendered met Vue en Nuxt
 In 2019 heb ik logo, huisstijl en website ontwikkeld voor Design For Interior. Voor website van Design For Interior heb ik aan de back-end gebruik gemaakt van PHP in combinatie met een MySql database. Aan de front-end heb ik gebruik gemaakt van bootstrap 4 en jQuery.<br>
 <br>
-> <strong>Bekijk de originele website op</strong> http://www.designforinterior.com/zoeken
+> <strong>Bekijk de originele website op</strong><br> http://www.designforinterior.com/zoeken
 <br>
 <br>
 
 Om aan te tonen dat ik meer in huis heb dan het bouwen van een website op een traditionele manier heb ik ervoor gekozen een kleinere versie van dezelfde website ook te bouwen met React en met Vue. In deze github respository is de Vue variant te vinden. Om nog een stap extra te maken heb ik de website gebouwd met een framework voor Vue genaamd Nuxt (zie https://nuxtjs.org). Nuxt biedt goede oplossingen voor SEO doeleinden en levert extra snelle performance dankzij SSR techniek (Server Side Rendered).<br>
 <br>
 
-> <strong>Bekijk de website gemaakt met Vue en Nuxt op</strong> http://www.vanlitmedia.nl/dfi-ssr
+> <strong>Bekijk de website gemaakt met Vue en Nuxt op</strong><br> http://www.vanlitmedia.nl/dfi-ssr
 <br>
 <br>
 

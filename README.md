@@ -14,7 +14,7 @@ Om aan te tonen dat ik meer in huis heb dan het bouwen van een website op een tr
 
 <br>
 <br>
-Voel je vrij om in mijn code te kijken. Clone deze repository, ssh naar de map en volg de stappen in de setup hieronder hieronder.
+Voel je vrij om in mijn code te kijken. Clone deze repository, ssh naar de map en volg de stappen in de setup hieronder.
 
 ## Setup
 

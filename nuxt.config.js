@@ -46,6 +46,10 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    publicPath: '/dfi-ssr/',
     extend(config, ctx) { }
+  },
+  router: {
+    base: process.env.NODE_ENV === 'dev' ? '/' : '/dfi-ssr/'
   }
 }

@@ -1,6 +1,7 @@
-# dfi-ssr
+# Design For Interior - Server Side Rendered met Vue en Nuxt
 
-> Gemaakt met Vue en Nuxt
+> In 2019 heb ik logo, huisstijl en website ontwikkeld voor Design For Interior
+> ...
 
 ## Build Setup
 

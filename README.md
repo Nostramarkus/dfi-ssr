@@ -1,9 +1,9 @@
 # Design For Interior - Server Side Rendered met Vue en Nuxt
 
 
-``
+`
 In 2019 heb ik logo, huisstijl en website ontwikkeld voor Design For Interior. Voor website van Design For Interior heb ik aan de back-end gebruik gemaakt van PHP in combinatie met een MySql database. Aan de front-end heb ik gebruik gemaakt van bootstrap 4 en jQuery.
-``
+`
 > Bekijk de originele website op http://www.designforinterior.com/zoeken
 
 

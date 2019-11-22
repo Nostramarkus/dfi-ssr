@@ -20,6 +20,7 @@
   </div>
 </template>
 
+
 <script>
 import Loader from '~/components/Loader.vue'
 import ZoekFilters from '~/components/ZoekFilters.vue'
